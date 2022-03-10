@@ -1,0 +1,21 @@
+<section class="searchsection">
+    <label>Sök film: </label>
+    <input type="text" #searchInput>
+    <button (click)="searchMovie(searchInput.value)">SÖK</button>
+</section>
+
+<section>
+        <div class="productsection" *ngIf="SearchResult.length > 0">
+            <div class="productdiv" *ngFor="let sr of SearchResult; let i = index">
+                <h2>{{ sr.name }}</h2>
+                <p> {{ sr.price + ":-"  }}</p>
+                <button (click)="BuyProduct(i)">
+                    <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">KÖP</a>
+                </button>
+                <img src="{{ sr.imageUrl }}" alt="poster of {{ sr.name }}" width="150px">
+                <button>
+                    <a [routerLink]="['products/details/', sr.id]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">LÄS MER</a>
+                </button>
+            </div>
+        </div>
+</section>

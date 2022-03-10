@@ -1,0 +1,18 @@
+<section>
+        <div *ngFor="let d of details; let i = index">
+
+            <div *ngIf="d.id === productId">
+
+                <div class="productsection">
+                <h2>{{ d.name }}</h2>
+                <img src="{{ d.imageUrl }}" alt="poster of {{ d.name }}" width="350px">
+
+                <p> {{ d.price + ":-" }}</p>
+                <p> {{ d.description }} </p>
+                <button (click)="BuyProduct(i)">
+                    <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">KÖP</a>
+                </button>
+                </div>
+            </div>
+        </div>
+</section>

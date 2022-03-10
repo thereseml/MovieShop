@@ -1,0 +1,98 @@
+main {
+  background-color: white;
+  color: black;
+}
+
+section h1 {
+  padding: 1rem;
+  text-align: center;
+}
+
+section .productsection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section .productsection img {
+  float: left;
+  margin: 1rem;
+}
+
+section .productsection .description {
+  font-size: 0.8rem;
+  display: inline;
+}
+
+section .productsection .total {
+  text-align: right;
+  width: auto;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #282726;
+  color: white;
+}
+
+section .productsection div {
+  height: auto;
+  width: auto;
+}
+
+section .productsection div h2 {
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+section .productsection div p {
+  font-weight: bold;
+  text-align: right;
+  margin-right: 1rem;
+}
+
+section .productsection div .delete {
+  position: absolute;
+  right: 1rem;
+  margin-top: -2rem;
+  font-size: 0.5rem;
+}
+
+button {
+  text-decoration: none;
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  margin: 1rem;
+  background-color: #282726;
+  padding: 0.6rem 1.5rem;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+}
+
+button:hover {
+  background-color: #f4c901;
+}
+
+.formsection {
+  display: block;
+  text-align: center;
+}
+
+.formsection h2 {
+  padding: 1rem;
+}
+
+.formsection form {
+  display: inline-block;
+  margin: 1rem;
+}
+
+.formsection form input {
+  margin: 1rem;
+  height: 2rem;
+}
+/*# sourceMappingURL=shoppingcart.component.css.map */

@@ -1,0 +1,13 @@
+html {
+  background: url(img/bg.jpg) no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: rgba(40, 39, 38, 0.2);
+  padding: 1rem;
+  margin: 0;
+}
+/*# sourceMappingURL=styles.css.map */

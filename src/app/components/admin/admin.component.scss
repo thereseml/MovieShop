@@ -1,0 +1,55 @@
+main {
+    background-color: white;
+    color:black;
+}
+
+img {
+    
+}
+
+.ordersection {
+    margin-left: 1rem;
+}
+
+.formsection {
+    display: block;
+    text-align: center;
+
+    h1{
+        color: black;
+        text-align: center;
+        font-size: 2rem;
+        padding: 1rem;
+    }
+    
+
+    form {
+        display: inline-block;
+        color: black;
+        margin: 1rem;
+
+        input {
+            margin: 1rem;
+            height: 2rem;
+        }
+    }
+
+}
+
+button {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    margin: 1rem;
+    background-color: #282726;
+    padding: 0.6rem 1.5rem;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+
+    &:hover {
+        background-color: #f4c901;
+    }
+   
+}

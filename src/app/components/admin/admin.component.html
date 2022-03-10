@@ -1,0 +1,37 @@
+<main>
+    <section class="formsection">
+        <h1>Logga in som admin</h1>
+        <form [formGroup]="adminForm" (ngSubmit)="onLoggIn()">
+                <label for="username">Användarnamn:</label>
+                <input type="text" id="username" name="username" formControlName="username" required>
+                <label for="password">Lösenord:</label>
+                <input type="text" id="password" name="password" formControlName="password" required><br>
+        <button type="submit" (click)="onLoggIn()">LOGGA IN</button>
+
+        </form>
+    </section>
+
+
+    <section class="ordersection">
+        <h1>Alla ordrar</h1>
+        <div *ngIf="OrderList.length == 0">
+            <p>Det finns inga ordrar att hämta!</p>
+        </div>
+        <div>
+            <div *ngFor=" let o of OrderList.reverse()">
+                <h3>OrderId: {{ o.id }}</h3> 
+                <div class="ordersection" *ngFor="let row of o.orderRows">
+                        <div *ngFor="let p of products">
+                            <div *ngIf="p.id === row.productId">
+                            <p *ngIf="p.id === row.productId">Vara: {{ p.name }}</p>
+                            <img *ngIf="p.id === row.productId" src="{{ p.imageUrl }}" alt="poster of {{ p.name }}" width="150px">
+                            <p *ngIf="p.id === row.productId">Pris: {{ p.price + ":-" }}</p><br>
+                            </div>
+                        </div>
+                </div>
+                <p>Köpare: {{ o.createdBy }}</p> <p>Datum: {{o.created | date: "yyyy-MM-dd"}}</p>
+                <button class="delete" (click)="deleteOrder(o.id)">TA BORT ORDER</button>
+            </div>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,37 @@
+.productsection {
+    outline: 1px solid rgb(51, 255, 0);
+
+    div {
+        outline: 1px solid red;
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 20px;
+        width: 15rem;
+        margin: 1rem;
+        padding: 1rem;
+        text-align: center;
+    }
+}
+
+
+a {
+color: white;
+text-decoration: none;
+}
+
+button {
+text-decoration: none;
+font-size: 1rem;
+color: white;
+text-decoration: none;
+margin: 1rem;
+background-color: #282726;
+padding: 0.6rem 1.5rem;
+font-weight: bold;
+border-radius: 10px;
+border: none;
+
+&:hover {
+    background-color: #f4c901;
+}
+
+}

@@ -1,0 +1,30 @@
+<main>
+    <section >
+        <h1>Din varukorg</h1>
+        <div *ngIf="shoppingcart.length == 0">
+            <p>Din varukorg är tom!</p>
+        </div>
+        <div class="productsection">
+            <div *ngFor=" let s of shoppingcart">
+                <img src="{{ s.imageUrl }}" alt="poster of {{ s.name }}" width="100px">
+                <h2>{{ s.name }}</h2> 
+                <p class="description">{{ s.description }}</p>
+                <p>Pris: {{ s.price + ":-" }}</p><br>
+                <button class="delete" (click)="deleteMovie(s)">TA BORT</button>
+            </div>
+            <h3 class="total">Totalt pris: {{ totalprice + "kr"}} </h3>
+            <button (click)="emptyCart()">TÖM VARUKORGEN</button>
+        </div>
+    </section>
+
+    <section class="formsection">
+        <h2>Fyll i forumläret för att genomföra ditt köp</h2>
+        <form [formGroup]="shoppingForm" (submit)="newOrder()">
+                <label for="firstname">Förnamn:</label>
+                <input type="text" id="firstname" name="firstname" formControlName="firstname" #firstname required>
+                <label for="lastname">Efternamn:</label>
+                <input type="text" id="lastname" name="lastname" formControlName="lastname" #lastname required><br>
+            <button type="submit" [disabled]="!shoppingForm.valid">GENOMFÖR KÖP</button>
+        </form>
+    </section>
+</main>

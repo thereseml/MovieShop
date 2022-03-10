@@ -2,8 +2,17 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import 'zone.js/plugins/zone-error'
+
+
 export const environment = {
-  production: false
+  production: false,
+
+  MovieUrl: "https://medieinstitutet-wie-products.azurewebsites.net/api/products",
+  CategoriesUrl: "https://medieinstitutet-wie-products.azurewebsites.net/api/categories",
+  SearchUrl: "https://medieinstitutet-wie-products.azurewebsites.net/api/search?searchText=",
+  OrderUrl: "https://medieinstitutet-wie-products.azurewebsites.net/api/orders",
+  GetOrders: "https://medieinstitutet-wie-products.azurewebsites.net/api/orders?companyId=28"
 };
 
 /*

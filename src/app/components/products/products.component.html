@@ -1,0 +1,46 @@
+<nav>
+    <li *ngFor=" let c of categories; let id = index">
+        <a (click)="CategoryClick(c.id)">{{ c.name | uppercase }}</a>
+    </li>
+</nav><br>
+
+
+
+<section *ngIf="categoryId === 0">
+    <div class="productsection">
+            <div class="productdiv" *ngFor="let p of products; let i = index">
+                <h2>{{ p.name }}</h2>
+                <p> {{ p.price + ":-"  }}</p>
+                <button (click)="BuyProduct(i)">
+                    <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">KÖP</a>
+                </button>
+                <img src="{{ p.imageUrl }}" alt="poster of {{ p.name }}" width="150px">
+                <button>
+                    <a [routerLink]="['details/', p.id]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">LÄS MER</a>
+                </button>
+            </div>
+    </div>
+</section>
+
+<section class="categorysection">
+    <div *ngFor="let c of categories">
+        <div class="productdivtwo" *ngFor="let p of products; let i = index">
+            <div *ngIf="categoryId === c.id">
+                <div *ngFor="let categories of p.productCategory">
+                    <div class="categoryloop" *ngIf="c.id === categories.categoryId">
+                        <h2>{{ p.name }}</h2>
+                        <p> {{ c.name }}</p>
+                        <p> {{ p.price + ":-"  }}</p>
+                        <button (click)="BuyProduct(i)">
+                            <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">KÖP</a>
+                        </button>
+                        <img src="{{ p.imageUrl }}" alt="poster of {{ p.name }}" width="150px">
+                        <button>
+                            <a [routerLink]="['products/details/', p.id]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">LÄS MER</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
